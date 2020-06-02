@@ -2,7 +2,7 @@ def w_cheaker(lst,i,j):
     count = 0
     for x in range(8):
         for y in range(8):
-            if (x+y)%2==0:
+            if x%2==y%2:
                 if lst[i+x][j+y]!='W':
                     count+=1
             else:
@@ -15,7 +15,7 @@ def b_cheaker(lst,i,j):
     count = 0
     for x in range(8):
         for y in range(8):
-            if (x+y)%2==0:
+            if x%2==y%2:
                 if lst[i+x][j+y]!='B':
                     count+=1
             else:
