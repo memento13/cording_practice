@@ -6,7 +6,7 @@ for i in range(N):
     b = (x,y)
     a.append(b)
 
-a = sorted(a, key = lambda x : x[1])
+a = sorted(a, key = lambda x : (x[1],x[0]))
 for i in a:
     for j in i:
         print(j,end=' ')
