@@ -1,13 +1,12 @@
 N = int(input())
-global MAX,MIN
 N_list = list(map(int,input().split()))
-operator_list = list(map(int,input().split()))
+plus, minus, multiple, division = map(int, input().split())
+operator_list = list()
+operation_list += [1] * plus
+operation_list += [2] * minus
+operation_list += [3] * multiple
+operation_list += [4] * division
 
-def make_operator_dict(operator_list):
-    operator_dict = dict()
-    for i,c in enumerate(operator_list):
-        operator_dict[i] = c
-    return operator_dict
 
 def calculator(i,num,result):
     if i==0:
@@ -26,7 +25,7 @@ def calculator(i,num,result):
             result = result // num
         return result
 
-operator_dict = make_operator_dict(operator_dict)
+operator_dict = make_operator_dict(operator_list)
 result_list = list()
         
 def cal(N_list, operator_dict):
@@ -36,4 +35,10 @@ def cal(N_list, operator_dict):
         return 0
     else:
         result = N_list.pop(0)
+        temp = N_list[0]
+        for key,value in operator_dict.items():
+            if value == 0:
+                continue
+            else:
+
         
