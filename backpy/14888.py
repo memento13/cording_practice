@@ -1,44 +1,46 @@
 N = int(input())
 N_list = list(map(int,input().split()))
 plus, minus, multiple, division = map(int, input().split())
+result_list = list()
 operator_list = list()
-operation_list += [1] * plus
-operation_list += [2] * minus
-operation_list += [3] * multiple
-operation_list += [4] * division
+operator_list += [1] * plus
+operator_list += [2] * minus
+operator_list += [3] * multiple
+operator_list += [4] * division
 
 
 def calculator(i,num,result):
     if i==0:
         result = result +num
         return result
-    if i==1:
+    elif i==1:
         result = result -num
         return result
-    if i==2:
+    elif i==2:
         result = result *num
         return result
-    if i==3:
+    elif i==3:
         if num<0:
             result = -1*(-result//abs(num))
         else:
             result = result // num
         return result
 
-operator_dict = make_operator_dict(operator_list)
-result_list = list()
-        
-def cal(N_list, operator_dict):
-    print(N_list,operator_dict)
-    if len(N_list)==1:
-        result_list.append(N_list[0])
-        return 0
+def func(i,result):
+    if i==N:
+        result_list.append(result)
+        return
     else:
-        result = N_list.pop(0)
-        temp = N_list[0]
-        for key,value in operator_dict.items():
-            if value == 0:
-                continue
-            else:
+        temp_operator = operator_list.pop()
+        result = calculator(temp_operator,N_list[i],result)
+        for x in operator_list:
+            func(i+1,result)
+        operator_list.insert(0,temp_operator)
 
-        
+func(1,N_list[0])
+result_list.sort()
+min = result_list[0]
+result_list.reverse()
+max = result_list[0]
+print(max)
+print(min)
