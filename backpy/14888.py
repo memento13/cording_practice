@@ -31,7 +31,7 @@ def func(i,result):
         result_list.append(result)
         return
     else:
-        temp_operator = operator_list.pop()
+        temp_operator = operator_list.pop(0)
         result = calculator(temp_operator,N_list[i],result)
         for x in operator_list:
             func(i+1,result)
