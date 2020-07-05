@@ -1,9 +1,5 @@
-L = list()
-
-def func():
-    board2 = input()
+def func(board2):
     board2 = board2.split('-')
-
     front = list(board2[0])
     back = int(board2[1])
     result = 0
@@ -11,18 +7,15 @@ def func():
     for i in range(3):
         result += (int(ord(front[i]))-65)*(26**(2-i))
 
-    result = back - result
+    result = abs(back - result)
     if result<=100:
-        L.append("nice")
         print("nice")
     else:
-        L.append("not nice")
         print("not nice")
 
 N= int(input())
+L = list()
 for i in range(N):
-    func()
-"""
+    L.append(input())
 for i in range(N):
-    print(L[i])
-"""
+    func(L[i])
