@@ -18,16 +18,22 @@ def func(side,case,time,x,y):
         print(x,y)
         return
     else:
+        time = time+1
+        case = case+1
         if side%2==1: #변의 길이 홀수일때
-            if case ==0:
-                func(side,case+1,time+1,x,y+1)
+            if case <=side:
+                func(side,case,time,x,y+1)
             else:
-                func(side+1,case-1,time+1,x+1,y)
+                if case>=side*2:
+                    case = 0
+                func(side+1,case,time,x+1,y)
         else:
-            if case ==0:
-                func(side,case+1,time+1,x,y-1)
+            if case <=side:
+                func(side,case,time,x,y-1)
             else:
-                func(side+1,case-1,time+1,x-1,y)
+                if case>=side*2:
+                    case = 0
+                func(side+1,case,time,x-1,y)
 
 func(1,0,0,0,0)
     
