@@ -2,19 +2,21 @@ w = input()
 word_list = list()
 
 def exchange(eword):
-    eword = list(eword)
     length = len(eword)
     for i in range(length//2):
-        temp = eword[length-1-i]
-        eword[length-1-i] = eword[i]
+        temp = eword[length-i-1]
+        eword[length-i-1] = eword[i]
         eword[i] = temp
     return "".join(eword)
 
 def divide(word):
+    word = list(word)
     length = len(word)
-    for i in range(length-2):
+    if length ==3:
+        word_list.append("".join(word))
+    for i in range(1,length-2):
         for j in range(i+1,length-1):
-            i_word = word[:i+1]
+            i_word = word[0:i]
             i_word=exchange(i_word)
 
             j_word = word[i:j]
@@ -29,4 +31,8 @@ def divide(word):
 divide(w)
 word_list.sort()
 print(word_list[0])
+
+# l = [1,2,3,4]
+# print(l[1:2])
+
 
