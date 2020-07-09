@@ -13,28 +13,24 @@ def func_input():
         else:
             temp = [m,n]
             RC_list.append(temp)
-
-def trans26(num):
-    result = ''
-    num = int(num)
-    while num>26:
-        if(num%26==0):
-            temp = 'A'
-        else:
-            temp = chr(num%26+64)
-        result = temp+result
-        num = num//26
-    if(num==26):
-        temp = 'Z'
-        result = result+temp
-    elif num%26 != 0:
-        temp = chr(num%26+64)
-        result = result+temp
-    return result
+result = ''
+def convert(n):
+    T = "ABCDEFGHIGKLMNOPQRSTUVWXYZ"
+    if n<27:    
+        result = result+T[n]
+    else:
+        q,r = divmod(n,26)
+        
+    q,r = divmod(n,26)
+    if q ==0:
+        return T[r]
+    else:
+        return convert(q)+T[r]
 
 
 w = input()
-print(trans26(w))
+w = int(w)
+print(convert(w))
 
 
 # def trans():

@@ -21,11 +21,11 @@ def counter():
 def bfs(i,j):
     global v
     global k
-    if i<0 or i>=R:
+    if i<0 or i>R-1:
         return
-    elif j<0 or j>=C:
+    if j<0 or j>C-1:
         return
-    elif visited[i][j] == True:
+    if visited[i][j] == True:
         return
     else:
         visited[i][j] = True

@@ -14,8 +14,8 @@ def divide(word):
     length = len(word)
     if length ==3:
         word_list.append("".join(word))
-    for i in range(1,length-2):
-        for j in range(i+1,length-1):
+    for i in range(1,length-1):
+        for j in range(i+1,length):
             i_word = word[0:i]
             i_word=exchange(i_word)
 
@@ -31,8 +31,3 @@ def divide(word):
 divide(w)
 word_list.sort()
 print(word_list[0])
-
-# l = [1,2,3,4]
-# print(l[1:2])
-
-
