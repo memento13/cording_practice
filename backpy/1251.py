@@ -26,5 +26,5 @@ def divide(word):
 
 divide(w)
 word_list.sort()
-print(word_list)
+print(word_list[0])
 

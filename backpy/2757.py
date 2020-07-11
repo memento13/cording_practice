@@ -1,6 +1,20 @@
 
 RC_list = list()
-result_list = []
+
+
+def convert(n):
+    T = "ABCDEFGHIGKLMNOPQRSTUVWXYZ"
+
+    q,r = divmod(n,26)
+    if q ==0:
+        return T[r-1]
+    else:
+        if r==0:
+            q = q-1
+            if q==0:
+                return T[r-1]
+        return convert(q)+T[r-1]
+
 def func_input():
     while True:
         RnCm = input()
@@ -8,34 +22,15 @@ def func_input():
         C = nCm.find('C')
         n = nCm[:C]
         m = nCm[C+1:]
+        m = int(m)
         if(int(n)==0 and int(m)==0):
             break
         else:
-            temp = [m,n]
+            temp = convert(m)+n
             RC_list.append(temp)
-result = ''
-def convert(n):
-    T = "ABCDEFGHIGKLMNOPQRSTUVWXYZ"
-    if n<27:    
-        result = result+T[n]
-    else:
-        q,r = divmod(n,26)
-        
-    q,r = divmod(n,26)
-    if q ==0:
-        return T[r]
-    else:
-        return convert(q)+T[r]
 
-
-w = input()
-w = int(w)
-print(convert(w))
-
-
-# def trans():
-
-# func_input()
-# print(RC_list)
+func_input()
+for i in RC_list:
+    print(i)
 
 
