@@ -28,9 +28,11 @@ def func_input():
         else:
             temp = convert(m)+n
             RC_list.append(temp)
-
+"""
 func_input()
 for i in RC_list:
     print(i)
-
+"""
+w = int(input())
+print(convert(w))
 
