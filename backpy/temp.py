@@ -1,3 +1,4 @@
+"""
 def battle(i, j):
     stack = [(i, j)]
     visit[i][j] = True
@@ -26,3 +27,8 @@ for i in range(n):
             s, w = battle(i, j)
             sheep+= s; wolf+= w
 print(sheep, wolf)
+"""
+li = [(50,50),(50,50),(49,51),(51,49),(48,52),(52,48)]
+print(li)
+li = set(li)
+print(li)
