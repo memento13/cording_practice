@@ -13,4 +13,4 @@ for i in range(N-2):
                ansub.add(List[i]+List[j]+List[k])
                break
 print(max(ansub))
-         
+# CK
