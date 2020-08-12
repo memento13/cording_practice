@@ -1,13 +1,16 @@
-F = [0,0]
+import sys
+
+F = [0,1]
 
 def fiv(i):
-    if i<len(F)-1:
+    global F
+    if i<len(F):
         return F[i]
     else:
-        temp = int(fiv(i-1)+fiv(i-2))
+        temp = fiv(i-1)+fiv(i-2)
         F.append(temp)
-        return
+        return temp
 
-n = int(input())
-fiv(n)
-print(F[n])
+n = int(sys.stdin.readline())
+
+print(fiv(n))
