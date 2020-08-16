@@ -1,34 +1,33 @@
 import sys
-
+sys.setrecursionlimit(100000)
 R,C = map(int,sys.stdin.readline().split())
-board = [[0]*C]*R
+board = [[False]*C for _ in range(R)]
 k=int(sys.stdin.readline())
 for _ in range(k):
     br,bc = map(int,sys.stdin.readline().split())
-    board[br][bc] = 1
+    board[br][bc] = True
 sr,sc = map(int,sys.stdin.readline().split())
-qu=list(map(int,sys.stdin.readline().strip().split()))
-qupossible = [True]*4
-q=0
-def move(r,c):
-    global q
-    global qupossible
-    if r>=R or r<0 or c>=C or c<0 or board[r][c]>0:
-        qupossible[q%4] = False
-        q+=1
+qu = list(map(int,sys.stdin.readline().split()))
+dirR = [0,-1,1,0,0]
+dirC = [0,0,0,-1,1]
+quImpossible = 0
+
+def Move(r,c,q):
+    global quImpossible
+    if quImpossible == 4:
+        print(r,c)
         return
-    else:
-        qupossible = [True]*4
-        while(qupossible[0]==True or qupossible[1]==True or qupossible[2]==True or qupossible[3]==True):
-            if qu[q%4]==1:
-                move(r-1,c)
-            elif qu[q%4]==2:
-                move(r+1,c)
-            elif qu[q%4] ==3:
-                move(r,c-1)
-            elif qu[q%4] ==4:
-                move(r,c+1)
-        return r,c
-resultr,resultc = move(sr,sc)
-print(resultr,resultc)
+    tempR = r+dirR[qu[q]]
+    tempC = c+dirC[qu[q]]
+    if(tempR<0 or tempR>=R or tempC<0 or tempC>=C or board[tempR][tempC]==True):
+        quImpossible+=1
+        Move(r,c,(q+1)%4)
+        return
+    board[r][c] = True
+    quImpossible = 0
+    Move(tempR,tempC,q)
+    return
+
+Move(sr,sc,0)
+
 

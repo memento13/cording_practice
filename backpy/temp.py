@@ -28,11 +28,5 @@ for i in range(n):
             sheep+= s; wolf+= w
 print(sheep, wolf)
 """
-li = [True,True,True,True]
-i = 0
-while(li[0]==True or li[1]==True or li[2]==True or li[3]==True):
-    li[i]=False
-    i+=1
-    print("%d 가능" %i)
-print(li)
-print("%d 불가능" %i)
+li = [[1,2,3,4],[5,6,7,8]]
+print(li[1][0])
