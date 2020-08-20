@@ -28,5 +28,10 @@ for i in range(n):
             sheep+= s; wolf+= w
 print(sheep, wolf)
 """
-li = [[1,2,3,4],[5,6,7,8]]
-print(li[1][0])
+li = [1,2,3,4]
+copy = li.copy()
+print(li)
+print(copy)
+copy.pop()
+print(li)
+print(copy)
