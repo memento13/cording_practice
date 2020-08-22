@@ -1,8 +1,7 @@
 import sys
-sys.setrecursionlimit(100000)
+
 N = int(sys.stdin.readline())
 house = []
-result = 1000000
 for _ in range(N):
     r,g,b = map(int,sys.stdin.readline().split())
     house.append([r,g,b])
