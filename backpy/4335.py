@@ -1,6 +1,6 @@
 import sys
 from copy import copy
-numlist = [0,1,2,3,4,5,6,7,8,9,10]
+numlist = [True]*11
 temp = copy(numlist)
 result = []
 while True:
@@ -9,13 +9,15 @@ while True:
         break
     answer = sys.stdin.readline().strip()
     if answer=="too high":
-        temp = temp[:num]
+        for i in range(num,11):
+            temp[i]=False
         continue
     if answer=="too low":
-        temp = temp[num+1:]
+        for i in range(0,num+1):
+            temp[i]=False
         continue
     if answer=="right on":
-        if temp.count(num)==0:
+        if temp[num]==False:
             print("Stan is dishonest")
         else:
             print("Stan may be honest")
