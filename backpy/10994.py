@@ -1,3 +1,5 @@
+import sys
+
 def solution():
     N = int(input())
     temp = 4*N - 3
@@ -40,3 +42,13 @@ def solution():
             sum -= 2
         print(string)
 solution()
+
+N = int(sys.stdin.readline())
+line = 4*N-3
+
+def star(now):
+    string=''
+    if now==line:
+        return
+    if now%2==0:
+        
