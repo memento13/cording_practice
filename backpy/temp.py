@@ -28,6 +28,7 @@ for i in range(n):
             sheep+= s; wolf+= w
 print(sheep, wolf)
 """
+"""
 a = [242, 256, 237, 223, 263, 81, 46]
 print('A = ', a)
 
@@ -43,3 +44,11 @@ plt.ylabel('유동 인구수', fontsize = 12)
 plt.scatter(x_data, a)
 plt.plot(x_data, a)
 plt.show( )
+"""
+import sys
+
+a,b = map(int,sys.stdin.readline().split())
+if a-b>0:
+    print(2*(a-b)//b)
+else:
+    print(-2*(a-b)//b)
