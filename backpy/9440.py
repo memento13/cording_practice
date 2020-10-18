@@ -40,6 +40,25 @@ def func(string):
 
     greedy_func(0,total,total//2,total-(total//2),inputList,[],[])
 
+def func(string):
+    global result
+    left = []
+    right = []
+    # a = list(map(int,string.split()))
+    inputList = list(map(str,string[1:].split()))
+    inputList.sort()
+    count = inputList.count('0')
+
+    temp = count
+    while temp>0:
+        inputList.remove('0')
+    print(inputList)
+    flag = True
+    # for i in inputList:
+    #     if flag:
+
+    result = ''.join(inputList)
+    result = int(result)
 
 while True:
     string = sys.stdin.readline().strip()

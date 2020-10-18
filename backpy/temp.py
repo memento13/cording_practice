@@ -54,13 +54,18 @@ plt.show( )
 #     print(-2*(a-b)//b)
 
 
+# import sys
+# keypad = [[1,2,3],[4,5,6],[7,8,9],[10,0,10]]
+# def findIndex(a):
+#     for i in range(4):
+#         if a in keypad[i]:
+#             return i,keypad[i].index(a)
+# y,x = findIndex(0)
+# print(x,y)
+# temp = 'a'
+# print(temp[-1])
+
 import sys
+
 keypad = [[1,2,3],[4,5,6],[7,8,9],[10,0,10]]
-def findIndex(a):
-    for i in range(4):
-        if a in keypad[i]:
-            return i,keypad[i].index(a)
-y,x = findIndex(0)
-print(x,y)
-temp = 'a'
-print(temp[-1])
+print(max(keypad))
