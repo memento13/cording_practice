@@ -65,7 +65,18 @@ plt.show( )
 # temp = 'a'
 # print(temp[-1])
 
-import sys
+# import sys
 
-keypad = [[1,2,3],[4,5,6],[7,8,9],[10,0,10]]
-print(max(keypad))
+# keypad = [[1,2,3],[4,5,6],[7,8,9],[10,0,10]]
+# print(max(keypad))
+# K = [[-1., -1., -1.],[-1., 9., -1.], [-1., -1., -1.]]
+import numpy as np
+temp = 11
+temp = temp//10
+print(temp)
+temp = temp//10
+print(temp)
+
+K = np.array([[-2, -1, 0],[-1, 1, 1], [0, 1, 2]])
+
+print(sum(K[0:1,0:1]))
