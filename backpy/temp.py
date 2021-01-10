@@ -70,13 +70,27 @@ plt.show( )
 # keypad = [[1,2,3],[4,5,6],[7,8,9],[10,0,10]]
 # print(max(keypad))
 # K = [[-1., -1., -1.],[-1., 9., -1.], [-1., -1., -1.]]
-import numpy as np
-temp = 11
-temp = temp//10
-print(temp)
-temp = temp//10
-print(temp)
+# import numpy as np
+# temp = 11
+# temp = temp//10
+# print(temp)
+# temp = temp//10
+# print(temp)
 
-K = np.array([[-2, -1, 0],[-1, 1, 1], [0, 1, 2]])
+# K = np.array([[-2, -1, 0],[-1, 1, 1], [0, 1, 2]])
 
-print(sum(K[0:1,0:1]))
+# print(sum(K[0:1,0:1]))
+
+import sys
+
+board = []
+dic = {'B' : 1,'O' : 2,'G' : 3,'R' : 4,'W' : 5,'Y' : 6}
+for _ in range(8):
+    temp = list(sys.stdin.readline().strip().split())
+    ins = []
+    for i in temp:
+        ins.append(dic[i])
+    board.append(ins)
+
+for i in board:
+    print(i)
