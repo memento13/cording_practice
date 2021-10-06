@@ -10,6 +10,7 @@ if a>b:
     flag = True
 result = 10001
 
+
 def func(now,jump,tried):
     global result
     if now+jump==b:

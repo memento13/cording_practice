@@ -13,4 +13,6 @@ for i in range(N): #학생
                 same[i] += 1
                 break
 
+
+
 print(same.index(max(same))+1)
