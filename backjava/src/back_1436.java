@@ -1,9 +1,11 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-class Main {
+public class back_1436 {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int cnt = 0;
@@ -18,7 +20,5 @@ class Main {
             num++;
         }
         System.out.println(num);
-
     }
-
 }
