@@ -32,16 +32,15 @@ public class hash_4 {
         for (Integer genresPlaysSortedByPlay : genresPlaysSortedByPlays) {
             for (Map.Entry<String, Integer> entry : genresPlays.entrySet()) {
                 if(entry.getValue()==genresPlaysSortedByPlay){
-                    System.out.println(entry.getKey()+" : "+genresPlaysSortedByPlay);
+
                     searchGenre = entry.getKey();
                     break;
                 }
             }
             if(searchGenre==null){
-                System.out.println("없음");
                 break;
             }
-            System.out.println("searchGenre = " + searchGenre);
+
             /**
              * 장르값으로 해당 장르 노래 고유번호 찾기
              * 고유번호로 정렬
@@ -56,37 +55,35 @@ public class hash_4 {
                     songsByGenre.add(song);
                 }
             }
-            System.out.println("songsByGenre = " + songsByGenre);
+
             Collections.sort(songsByGenre);
 
 //            플레이수로 정렬
             List<Integer> playsBySong = new ArrayList<>(playsMap.values());
             Collections.sort(playsBySong,Collections.reverseOrder());
-            System.out.println("playsBySong = " + playsBySong);
+
 
             int i=0;
             for (Integer play : playsBySong) {
                 if(i>1){
                     break;
                 }
-                i++;
+
                 for (Integer song : songsByGenre) {
                     if(playsMap.get(song)==play && !songRank.containsValue(song)){
                         songRank.put(rank,song);
                         rank++;
+                        i++;
                         break;
                     }
                 }
             }
         }
-        System.out.println("songRank = " + songRank);
+
 
         answer = new int[songRank.size()];
         for(int i=0;i<songRank.size();i++){
             answer[i]=songRank.get(i);
-        }
-        for (int i : answer) {
-            System.out.println("i = " + i);
         }
 
 
