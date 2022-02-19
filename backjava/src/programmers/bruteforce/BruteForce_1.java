@@ -2,7 +2,7 @@ package programmers.bruteforce;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//t
 public class BruteForce_1 {
     public static void main(String[] args) {
 
