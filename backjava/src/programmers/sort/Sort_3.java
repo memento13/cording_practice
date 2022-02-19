@@ -28,7 +28,7 @@ public class Sort_3 {
 
 
             }
-            if(h<below&&)
+//            if(h<below&&)
             above++;
 
         }
