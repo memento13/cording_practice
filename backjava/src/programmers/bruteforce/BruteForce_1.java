@@ -53,4 +53,6 @@ public class BruteForce_1 {
             System.out.println(i);
         }
     }
+
 }
+

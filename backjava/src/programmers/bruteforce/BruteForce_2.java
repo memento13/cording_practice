@@ -3,6 +3,8 @@ package programmers.bruteforce;
 import java.util.HashSet;
 import java.util.Set;
 
+//2021.2.19
+
 public class BruteForce_2 {
     public static void main(String[] args) {
         String numbers = "17";
