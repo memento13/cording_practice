@@ -10,7 +10,6 @@ public class BruteForce_2 {
 
         PrimeNumbersFinder primeNumbersFinder = new PrimeNumbersFinder(numbers);
 
-
         primeNumbersFinder.finder("",numbers);
 
         answer = primeNumbersFinder.getResult();
